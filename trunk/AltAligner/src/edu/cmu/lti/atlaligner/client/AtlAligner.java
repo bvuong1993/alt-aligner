@@ -111,6 +111,7 @@ public class AtlAligner implements EntryPoint {
 		// Parse the parameters
 		String srcSent = Window.Location.getParameter("srcsent");
 		String tgtSent = Window.Location.getParameter("tgtsent");
+		String hnt = Window.Location.getParameter("hint");
 		String idxOnSource = Window.Location.getParameter("idxonsrc");
 		boolean idxOs = false;
 		String idx  = Window.Location.getParameter("idx");
@@ -132,9 +133,9 @@ public class AtlAligner implements EntryPoint {
 			try {
 				idxOs = Boolean.parseBoolean(idxOnSource);
 				if(idxOs)
-					alignment = new SentenceAlignment(srcSent,tgtSent,"");
+					alignment = new SentenceAlignment(srcSent,tgtSent,hnt==null?"":hnt);
 				else
-					alignment = new SentenceAlignment(tgtSent,srcSent,"");
+					alignment = new SentenceAlignment(tgtSent,srcSent,hnt==null?"":hnt);
 			} catch (Exception e) {
 				titleLabel.setText("The URL is invalid, what you see below is just a demo ");
 				titleLabel.addStyleName("title-info-error");
