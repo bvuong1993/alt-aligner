@@ -379,7 +379,7 @@ public class AtlAligner implements EntryPoint {
 		while(it.hasNext()){
 			AlignmentLink a = it.next();
 			align.append(a.getSourceIndex()).append("-");
-			if(a.getTargetIndex()>alignment.getSourceLength())
+			if(a.getTargetIndex()>alignment.getTargetLength())
 				align.append(0).append(" ");
 			else
 				align.append(a.getTargetIndex()).append(" ");
