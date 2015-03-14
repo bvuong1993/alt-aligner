@@ -1,0 +1,1 @@
+It is a GWT based tool for word alignment, it supports embedding into mechanical turk for collecting word alignments from turkers.
